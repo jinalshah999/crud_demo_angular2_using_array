@@ -1,0 +1,15 @@
+points to cover gdg
+
+why angular
+package.json
+<app-root>
+component-binding-string interpolation,method,
+property,twoway,template
+app.module
+nesting component
+routing-simple,query string,code routing
+class
+service
+crud operation--run time css,visblity-validation
+pipes
+deployment

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <app-header></app-header>
+  </div>
+  <div class="row">
+  <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">
+    <span class="glyphicon glyphicon-search"></span>
+  </span>
+  <input type="text" (keyup)="0" #input1 class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+</div>
+  </div>
+  <br/>
+  <div class="row">
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Status</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of (allTask|taskfilter:input1.value) ">
+        <td>{{item.Id}}</td>
+        <td>{{item.Title | uppercase}}</td>
+        <td><span [ngClass]="{'pendingstatus': item.Status=='pending','donestatus':item.Status=='done'}" >{{item.Status}}</span></td>
+        <td><button (click)="delTask(item)"><span class="glyphicon glyphicon-trash"></span></button>
+        <button><span class="glyphicon glyphicon-pencil"></span></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  
+</div>
